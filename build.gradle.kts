@@ -18,14 +18,14 @@ subprojects {
   apply(plugin = "maven-publish")
   configure<PublishingExtension> {
     publications {
-      create<MavenPublication>("Binary") {
+      create<MavenPublication>("Default") {
         from(components["java"])
       }
     }
     repositories {
       maven {
         name = "Artifactory"
-        url = uri("http://192.168.1.3:8091/artifactory/all/")
+        url = uri("http://home.gohla.nl:8091/artifactory/all/")
         credentials {
           username = project.findProperty("publish.repository.Artifactory.username")?.toString()
           password = project.findProperty("publish.repository.Artifactory.password")?.toString()
@@ -34,6 +34,7 @@ subprojects {
     }
   }
 }
+
 tasks {
   register("buildAll") {
     dependsOn(subprojects.map { it.tasks["build"] })
