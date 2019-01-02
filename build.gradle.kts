@@ -15,11 +15,9 @@ buildscript {
 apply {
   plugin("org.metaborg.gitonium")
 }
-val gitVersion = the<GitoniumExtension>().version
 
 subprojects {
   group = "org.metaborg"
-  version = gitVersion
   repositories {
     mavenCentral()
   }
