@@ -1,5 +1,12 @@
 rootProject.name = "log"
 
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    maven(url = "http://home.gohla.nl:8091/artifactory/all/")
+  }
+}
+
 include("log.api")
 include("log.slf4j")
 
