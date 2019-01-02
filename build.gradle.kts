@@ -4,11 +4,11 @@ plugins {
 
 subprojects {
   group = "org.metaborg"
-  
+
   repositories {
     maven(url = "http://home.gohla.nl:8091/artifactory/all/")
   }
-  
+
   apply(plugin = "java-library")
   configure<JavaPluginExtension> {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -17,6 +17,11 @@ subprojects {
 
   apply(plugin = "maven-publish")
   configure<PublishingExtension> {
+    publications {
+      create<MavenPublication>("Binary") {
+        from(components["java"])
+      }
+    }
     repositories {
       maven {
         name = "Artifactory"
