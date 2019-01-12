@@ -1,3 +1,3 @@
-@Library('github.com/spoofax-gradle-test/jenkins.pipeline') _
+@Library('metaborg.jenkins.pipeline') _
 
 gradlePipeline()
