@@ -1,3 +1,3 @@
-@Library('github.com/spoofax-gradle-test/jenkins.pipeline')
+@Library('github.com/spoofax-gradle-test/jenkins.pipeline') _
 
 gradlePipeline()
